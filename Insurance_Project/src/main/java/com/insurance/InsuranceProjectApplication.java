@@ -8,7 +8,7 @@ public class InsuranceProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InsuranceProjectApplication.class, args);
-		System.out.println("Hiiiiiiiiiiiiikkkkkkkkkkkkkkkkk");
+		System.out.println("My first change");
 	}
 
 }
