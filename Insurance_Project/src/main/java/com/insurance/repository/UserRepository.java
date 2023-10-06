@@ -13,5 +13,7 @@ import com.insurance.model.User;
 public interface UserRepository extends CrudRepository<User, Serializable>{
 	
 	public User findById(Integer id);
+	
+	
 
 }

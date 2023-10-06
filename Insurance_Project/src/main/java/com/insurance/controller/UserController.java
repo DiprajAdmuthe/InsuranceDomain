@@ -1,6 +1,7 @@
 package com.insurance.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +25,6 @@ public class UserController {
 		return saveUser;
 		
 	}
-	
 	@PutMapping("/updateUser")
 	public User updateUser(@RequestBody User user) {
 		User updateUser=userService.updateUser(user);
@@ -37,5 +37,10 @@ public class UserController {
 		return userid;
 		
 	}
+	@DeleteMapping("/deleteUser/{id}")
+	public void deleteUser(@PathVariable("id") Integer id) {
+		userService.deleteUser(id);
+	}
+	
 
 }

@@ -9,5 +9,7 @@ public interface UserService {
 	public User updateUser(User User);
 	
 	public User getUserById(Integer id);
+	
+	public void deleteUser(Integer id);
 
 }
