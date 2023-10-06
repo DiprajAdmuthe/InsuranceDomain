@@ -1,6 +1,8 @@
 package com.insurance.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,10 +24,17 @@ public class UserController {
 		return saveUser;
 		
 	}
+	
 	@PutMapping("/updateUser")
 	public User updateUser(@RequestBody User user) {
 		User updateUser=userService.updateUser(user);
 		return updateUser;
+		
+	}
+	@GetMapping("/getUserById/{id}")
+	public User getUserById(@PathVariable("id") Integer id) {
+		User userid=userService.getUserById(id);
+		return userid;
 		
 	}
 

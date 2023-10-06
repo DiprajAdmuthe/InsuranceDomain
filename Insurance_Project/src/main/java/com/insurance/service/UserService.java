@@ -7,5 +7,7 @@ public interface UserService {
 	public User saveUser(User user);
 	
 	public User updateUser(User User);
+	
+	public User getUserById(Integer id);
 
 }
