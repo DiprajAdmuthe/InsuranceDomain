@@ -1,9 +1,12 @@
 package com.insurance.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,13 +25,14 @@ public class User {
 	private String pancard;
 	private String mobileno;
 	private int age;
+	@OneToMany(mappedBy = "userid")
+	private List<Claim> claimList;
 	
 	public User() {
 		
 	}
-
 	public User(int id, String firstname, String lastname, String email, String city, String nationality,
-			String password, String gender, String pancard, String mobileno, int age) {
+			String password, String gender, String pancard, String mobileno, int age, List<Claim> claimList) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -41,6 +45,7 @@ public class User {
 		this.pancard = pancard;
 		this.mobileno = mobileno;
 		this.age = age;
+		this.claimList = claimList;
 	}
 
 	public int getId() {
@@ -130,13 +135,19 @@ public class User {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	public List<Claim> getClaimList() {
+		return claimList;
+	}
+	public void setClaimList(List<Claim> claimList) {
+		this.claimList = claimList;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", city="
 				+ city + ", nationality=" + nationality + ", password=" + password + ", gender=" + gender + ", pancard="
-				+ pancard + ", mobileno=" + mobileno + ", age=" + age + "]";
+				+ pancard + ", mobileno=" + mobileno + ", age=" + age + ", claimList=" + claimList + "]";
 	}
+
 	
 
 }
