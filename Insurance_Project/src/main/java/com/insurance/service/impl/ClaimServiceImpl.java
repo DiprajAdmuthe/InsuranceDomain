@@ -17,4 +17,22 @@ public class ClaimServiceImpl implements ClaimService{
 		return saveClaim;
 	}
 
+	@Override
+	public Claim updateClaim(Claim claim) {
+		Claim updateclaim = claimRepository.save(claim);
+		return updateclaim;
+	}
+
+	@Override
+	public Claim getClaimById(Integer id) {
+		Claim claimid = claimRepository.findById(id);
+		return claimid;
+	}
+
+	@Override
+	public void deleteClaimDetails(Integer id) {
+		claimRepository.deleteById(id);
+		
+	}
+
 }
