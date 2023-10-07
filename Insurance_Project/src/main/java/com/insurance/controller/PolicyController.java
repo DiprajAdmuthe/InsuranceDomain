@@ -1,7 +1,11 @@
 package com.insurance.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +25,24 @@ public class PolicyController {
 		return savePolicy;
 		
 	}
+	@PutMapping("/updatePolicy")
+	public Policy updatePolicy(@RequestBody Policy policy) {
+		Policy updatePolicy=policyService.updatePolicy(policy);
+		return updatePolicy;
+		
+	}
+	@GetMapping("/getPolicyById/{policyid}")
+	public Policy getPolicyById(@PathVariable("policyid") Integer policyid) {
+		Policy polices = policyService.findByPolicyId(policyid);
+		return polices;
+		
+	}
+//	@DeleteMapping("/findById/{policyid}")
+//	public void deletePolicyId(@PathVariable("policyid") Integer policyid) {
+//		policyService.deletePolicy(policyid);
+//		
+//		
+//	}
+
 
 }
