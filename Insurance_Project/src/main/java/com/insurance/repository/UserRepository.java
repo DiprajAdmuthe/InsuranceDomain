@@ -14,6 +14,8 @@ public interface UserRepository extends CrudRepository<User, Serializable>{
 	
 	public void deleteById(int id);
 	
+	public String findByPassword(String password);
+	
 	
 
 }

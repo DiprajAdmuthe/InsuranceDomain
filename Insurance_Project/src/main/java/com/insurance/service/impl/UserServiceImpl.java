@@ -35,6 +35,12 @@ public class UserServiceImpl implements UserService{
 		
 		userRepository.deleteById(id);
 	}
+    ////Build the Restful web services to change the user password
+	@Override
+	public String updateUser(String password) {
+		String passwords=userRepository.findByPassword(password);
+		return passwords;
+	}
 
 	
 

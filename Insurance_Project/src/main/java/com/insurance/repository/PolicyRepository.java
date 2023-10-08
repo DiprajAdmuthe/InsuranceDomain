@@ -13,6 +13,8 @@ import java.util.List;
 public interface PolicyRepository extends CrudRepository<Policy,Serializable>{
 	
 	public Policy findByPolicyid(int policyid);
+
+	
 	
 	//public void deleteById(int id);
 

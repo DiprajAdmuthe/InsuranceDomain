@@ -38,6 +38,14 @@ public class UserController {
 		return updateUser;
 		
 	}
+	@PutMapping("/updateUserPassword/{password}")
+	public String updateUserPassword(@PathVariable("password") String password) {
+		String updatedpassword=userService.updateUser(password);
+		return updatedpassword;
+		
+	}
+	
+	
 	@GetMapping("/getUserById/{id}")
 	public User getUserById(@PathVariable("id") Integer id) {
 		User userid=userService.getUserById(id);
@@ -59,6 +67,18 @@ public class UserController {
 			claimService.saveClaim(claim);
 		}
 		return ResponseEntity.ok().body(user1);
+		
+	}
+	//Build the Restful web service to fetch user with multiple claim details
+	@GetMapping("/getUserClaim/{id}")
+	ResponseEntity<User> getUserClaim(@PathVariable Integer id){
+		User userids = userService.getUserById(id);
+		List<Claim> claimids = userids.getClaimList();	
+		for(Claim claim:claimids) {
+			claim.setUserid(userids.getId());
+			claimService.getClaimById(id);
+		}
+		return ResponseEntity.ok().body(userids);
 		
 	}
 

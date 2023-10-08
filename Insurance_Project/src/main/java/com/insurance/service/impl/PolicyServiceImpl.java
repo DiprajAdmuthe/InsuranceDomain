@@ -1,5 +1,6 @@
 package com.insurance.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,15 @@ public class PolicyServiceImpl implements PolicyService{
 		Policy polid=policyRepository.findByPolicyid(policyid);
 		return polid;
 	}
+
+	@Override
+	public List<Policy> getAllPolicy(Policy policy) {
+		List<Policy> policieslists=(List<Policy>) policyRepository.findAll();
+		return policieslists;
+		
+		
+	}
+
 
 //	@Override
 //	public void deletePolicy(Integer policyid) {
