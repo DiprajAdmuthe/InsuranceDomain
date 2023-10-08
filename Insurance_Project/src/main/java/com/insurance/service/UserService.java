@@ -13,6 +13,9 @@ public interface UserService {
 	public void deleteUser(Integer id);
 	
 	//Build the Restful web services to change the user password
-	public String updateUser(String password);
+	//public User updateUserpassword(String user);
+
+	public String updateUserpassword(String firstname);
+	
 
 }

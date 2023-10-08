@@ -27,12 +27,16 @@ public class User {
 	private int age;
 	@OneToMany(mappedBy = "userid")
 	private List<Claim> claimList;
+	@OneToMany(mappedBy = "userid")
+	private List<Premium> premiumList;
 	
 	public User() {
 		
 	}
+
 	public User(int id, String firstname, String lastname, String email, String city, String nationality,
-			String password, String gender, String pancard, String mobileno, int age, List<Claim> claimList) {
+			String password, String gender, String pancard, String mobileno, int age, List<Claim> claimList,
+			List<Premium> premiumList) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -46,7 +50,9 @@ public class User {
 		this.mobileno = mobileno;
 		this.age = age;
 		this.claimList = claimList;
+		this.premiumList = premiumList;
 	}
+
 
 	public int getId() {
 		return id;
@@ -141,13 +147,20 @@ public class User {
 	public void setClaimList(List<Claim> claimList) {
 		this.claimList = claimList;
 	}
+	public List<Premium> getPremiumList() {
+		return premiumList;
+	}
+	public void setPremiumList(List<Premium> premiumList) {
+		this.premiumList = premiumList;
+	}
+
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", city="
 				+ city + ", nationality=" + nationality + ", password=" + password + ", gender=" + gender + ", pancard="
-				+ pancard + ", mobileno=" + mobileno + ", age=" + age + ", claimList=" + claimList + "]";
+				+ pancard + ", mobileno=" + mobileno + ", age=" + age + ", claimList=" + claimList + ", premiumList="
+				+ premiumList + "]";
 	}
-
-	
 
 }
