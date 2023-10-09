@@ -39,12 +39,12 @@ public class PolicyController {
 		return polices;
 		
 	}
-//	@DeleteMapping("/findById/{policyid}")
-//	public void deletePolicyId(@PathVariable("policyid") Integer policyid) {
-//		policyService.deletePolicy(policyid);
-//		
-//		
-//	}
+	@DeleteMapping("/findById/{policyid}")
+	public void deletePolicyId(@PathVariable("policyid") Integer policyid) {
+		
+		policyService.deletePolicyById(policyid);
+		
+	}
 	@GetMapping("/getAllPolicy")
 	public List<Policy> getAllListsOfPolicy(Policy policy){
 		List<Policy> allpolicieslists=policyService.getAllPolicy(policy);

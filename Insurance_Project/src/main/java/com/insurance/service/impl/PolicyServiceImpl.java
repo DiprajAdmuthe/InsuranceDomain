@@ -40,6 +40,12 @@ public class PolicyServiceImpl implements PolicyService{
 		
 	}
 
+	@Override
+	public void deletePolicyById(Integer id) {
+		policyRepository.deleteById(id);
+		
+	}
+
 
 //	@Override
 //	public void deletePolicy(Integer policyid) {

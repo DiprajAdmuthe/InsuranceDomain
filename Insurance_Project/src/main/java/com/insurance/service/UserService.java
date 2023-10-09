@@ -15,7 +15,7 @@ public interface UserService {
 	//Build the Restful web services to change the user password
 	//public User updateUserpassword(String user);
 
-	public String updateUserpassword(String firstname);
+	//public User updateUserpassword(String firstname) throws Exception;
 	
 
 }

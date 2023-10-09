@@ -15,5 +15,7 @@ public interface PolicyService {
 	//public void deletePolicy(Integer id);
 	
 	public List<Policy> getAllPolicy(Policy policy);
+	
+	public void deletePolicyById(Integer id);
 
 }

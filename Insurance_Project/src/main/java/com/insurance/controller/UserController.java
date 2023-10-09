@@ -108,17 +108,17 @@ public class UserController {
         	
         }
 	
-	@GetMapping("/updateUserpassword/{firstname}")
-	public boolean updateUserpassword(@PathVariable("firstname") String firstname,@RequestParam("password") String password) throws Exception {
-		String users=userService.updateUserpassword(firstname);
-		String user1=users.toLowerCase();
-	
-		if(user1!=null) {
-			userService.updateUserpassword(users);
-			return true;
-		}
-		return false;	
-	}
+//	@GetMapping("/updateUserpassword/{firstname}")
+//	public boolean updateUserpassword(@PathVariable("firstname") String firstname,@RequestParam("password") String password) throws Exception {
+//		User users=userService.updateUserpassword(firstname);
+//	
+//		if(users!=null) {
+//			users.setPassword(password);
+//			userService.updateUserpassword(firstname);
+//			return true;
+//		}
+//		return false;	
+//	}
 	
 	
 

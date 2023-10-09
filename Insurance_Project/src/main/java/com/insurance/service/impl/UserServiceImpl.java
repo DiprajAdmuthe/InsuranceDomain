@@ -37,12 +37,16 @@ public class UserServiceImpl implements UserService{
 	}
     ////Build the Restful web services to change the user password
 
-	@Override
-	public String updateUserpassword(String firstname) {
-		
-		
-		return userRepository.save(firstname);
-	}
+//	@Override
+//	public User updateUserpassword(String firstname) throws Exception {
+//		User username=userRepository.findByUsername(firstname);
+//		if(username!= null) {
+//			throw new Exception("User not found");
+//		}
+//		return username;
+//	}
+
+	
     
 	
 

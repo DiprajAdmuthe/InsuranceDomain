@@ -11,6 +11,6 @@ public interface ClaimRepository extends CrudRepository<Claim, Serializable>{
 	
 	public Claim findById(Integer id);
 	
-	public void deleteById(Integer id);
+	
 
 }
