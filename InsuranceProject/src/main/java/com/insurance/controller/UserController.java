@@ -21,7 +21,7 @@ import com.insurance.service.UserService;
 
 @RestController
 @RequestMapping("userpolicy")
-public class UserPolicyController {
+public class UserController {
 
 	@Autowired
 	private UserService userService;
